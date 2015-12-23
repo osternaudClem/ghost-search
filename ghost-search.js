@@ -4,7 +4,7 @@
  * Ghost API.
  *
  * by @osternaud_clem
- * V0.0.1 - December 2015
+ * V0.0.4 - December 2015
  */
 
 /**
@@ -64,7 +64,7 @@ function getElement(elem) {
       }
       break;
     case '.':
-      domElement = document.getElementById(suffix)[0];
+      domElement = document.getElementById(suffix);
       if (!domElement) {
         throw new Error('The Class "' + suffix + '" does not exist on this page');
       }
@@ -109,19 +109,22 @@ GhostSearch.prototype.init = function() {
 
 GhostSearch.prototype._search = function(e) {
   var that = this;
-  var terms = e.target.value.toLowerCase();
+  var terms = e.target.value;
+  terms = terms.split(' ');
 
-  if (terms == '') {
-    for (var i = 0; i < that.posts.length; i++) {
-      that.postsDom[i].style.display = 'none';
-    }
-  } else {
-    for (var i = 0; i < that.posts.length; i++) {
-      if (that.posts[i].title.toLowerCase().indexOf(terms) > -1) {
-        that.postsDom[i].style.display = 'block';
-      } else {
-        that.postsDom[i].style.display = 'none';
+  for (var i = 0; i < that.posts.length; i++) {
+    that.postsDom[i].style.display = 'none';
+    var isContain = 0;
+
+    for (var j = 0; j < terms.length; j++) {
+      if (that.posts[i].title.toLowerCase().indexOf(terms[j].toLowerCase()) > -1 ||
+      that.posts[i].html.toLowerCase().indexOf(terms[j].toLowerCase()) > -1) {
+        isContain++;
       }
+    }
+
+    if (isContain == terms.length) {
+      that.postsDom[i].style.display = 'block';
     }
   }
 };
