@@ -37,12 +37,20 @@ You can directly download the repo.
 To use it, you must call the GhostSearch functions.
 
 ```javascript
+var apiUrl = ghost.url.api('posts', {include: 'tags'});
+
 var sg = new GhostSearch({
   input: '#search',
   container: '#search-results',
+  api: apiUrl,
   atStart: 'hide'
 });
 ```
+
+About the **apiUrl**, this is important.
+For now, Ghost has an issue when you call several time the API.
+So you must declare once and unique time the method ```ghost.url.api('posts', {include: 'tags'});```.
+
 
 ## Options
 ### Input
@@ -101,6 +109,19 @@ With **DOM** element:
 var searchInput = document.getElementById('search-results');
 var sg = new GhostSearch({
   container: searchInput
+});
+```
+
+### API
+For now, Ghost has an issue when you call several time the API.
+So you must declare once and unique time the method ```ghost.url.api('posts', {include: 'tags'});```.
+
+#### Example
+```javascript
+var apiUrl = ghost.url.api('posts', {include: 'tags'});
+
+var sg = new GhostSearch({
+  api: apiUrl
 });
 ```
 

@@ -4,7 +4,7 @@
  * Ghost API.
  *
  * by @osternaud_clem
- * V0.0.5 - December 2015
+ * V0.0.4 - December 2015
  */
 
 /**
@@ -94,8 +94,8 @@ function GhostSearch(options) {
   this.classes  = options.classes;
   this.posts    = [];
   this.postsDom = [];
-  this.url      = ghost.url.api('posts', {include: 'tags'});
 
+  this.url = options.api;
   this.init();
 };
 
@@ -264,6 +264,7 @@ GhostSearch.prototype._insertTags = function(tags, parent) {
 GhostSearch.options = {
   input: null,
   container: null,
+  api: null,
   atStart: 'show',
   classes: {
     item: 'post-item',
