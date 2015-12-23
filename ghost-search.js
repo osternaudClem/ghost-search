@@ -51,33 +51,34 @@ function extend(object) {
  * @param  {string} elem
  * @return {DOM}
  */
-function getElement(elem) {
-  var domElement = null;
-  var prefix = elem[0];
-  var suffix = elem.substring(1);
+ function getElement(elem) {
+   var domElement = null;
+   var prefix = elem[0];
 
-  switch (prefix) {
-    case '#':
-      domElement = document.getElementById(suffix);
-      if (!domElement) {
-        throw new Error('The ID "' + suffix + '" does not exist on this page');
-      }
-      break;
-    case '.':
-      domElement = document.getElementById(suffix);
-      if (!domElement) {
-        throw new Error('The Class "' + suffix + '" does not exist on this page');
-      }
-      break;
-    default:
-      domElement = elem;
-      if (!domElement) {
-        throw new Error('The DOM Element "' + elem + '" does not exist on this page');
-      }
-  }
+   switch (prefix) {
+     case '#':
+       var suffix = elem.substring(1);
+       domElement = document.getElementById(suffix);
+       if (!domElement) {
+         throw new Error('The ID "' + suffix + '" does not exist on this page');
+       }
+       break;
+     case '.':
+       var suffix = elem.substring(1);
+       domElement = document.getElementById(suffix);
+       if (!domElement) {
+         throw new Error('The Class "' + suffix + '" does not exist on this page');
+       }
+       break;
+     default:
+       domElement = elem;
+       if (!domElement) {
+         throw new Error('The DOM Element "' + elem + '" does not exist on this page');
+       }
+   }
 
-  return domElement;
-}
+   return domElement;
+ }
 
 /**
  * Ghost Search engine
