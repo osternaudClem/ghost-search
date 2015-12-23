@@ -64,7 +64,7 @@ function getElement(elem) {
       }
       break;
     case '.':
-      domElement = document.getElementById(suffix);
+      domElement = document.getElementById(suffix)[0];
       if (!domElement) {
         throw new Error('The Class "' + suffix + '" does not exist on this page');
       }
@@ -132,7 +132,6 @@ GhostSearch.prototype._createHtml = function() {
 
   var xml = this._loadXml(this.url).then(function(data) {
     that.posts = data.posts;
-    console.log(that.posts);
 
     for (var i = 0; i < that.posts.length; i++) {
       var post = that.posts[i];
