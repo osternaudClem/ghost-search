@@ -268,7 +268,7 @@ GhostSearch.options = {
   classes: {
     item: 'post-item',
     header: 'post-header',
-    title: 'post-tile',
+    title: 'post-title',
     meta: 'post-meta',
     date: 'post-date',
     tags: 'post-tags-list',
