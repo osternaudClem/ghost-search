@@ -4,7 +4,7 @@
  * Ghost API.
  *
  * by @osternaud_clem
- * V0.0.4 - December 2015
+ * V0.0.7 - December 2015
  */
 
 /**
