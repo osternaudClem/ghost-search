@@ -115,7 +115,7 @@ The default value is ```show```.
 **classes** is an object where every needed class are define.
 
 | Name | Default | Role |
-| :------------- | :------------- |
+| :------------- | :------------- | :------------- |
 | item | ```post-item``` | This class wrap a search item |
 | header | ```post-header``` | This class wrap the header item. The header contains the **title** and the **meta** |
 | title | ```post-title``` | This class wrap the **title** |
