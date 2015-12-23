@@ -1,0 +1,24 @@
+{
+  "name": "ghost-search",
+  "main": "ghost-search.js",
+  "homepage": "https://github.com/osternaudClem/ghost-search",
+  "authors": [
+    "Clement Osternaud  <osternaud.clement@gmail.com>"
+  ],
+  "description": "GhostSearch is a Javascript plugin to add ghost search in your theme.",
+  "moduleType": [],
+  "keywords": [
+    "ghost",
+    "search",
+    "theme",
+    "api"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
