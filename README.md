@@ -154,6 +154,7 @@ Before that, let me show you what m...</p>
 
 ## TO-DO
 - Add custom templating
+- Add demo
 
 ## License
 The MIT License (MIT)
